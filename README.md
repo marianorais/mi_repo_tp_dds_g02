@@ -1,3 +1,14 @@
+# LINKS PRIMERA ENTREGA
+
+## DIAGRAMA DE CLASES
+* [Diagrama de clases](https://lucid.app/lucidchart/0d92cda0-db54-4303-8bb7-55bd92a662a1/edit?viewport_loc=731%2C-419%2C3552%2C1509%2C0_0&invitationId=inv_f078e864-41a8-4730-a0ab-17add4ed60d7)
+
+## CASOS DE USO
+* [Casos de uso](https://drive.google.com/file/d/1u2vdBdWyIoN_J1EnDZ5oIjk2WcngB3tq/view?usp=sharing)
+
+## FIGMA (BOCETO)
+* [Figma](https://www.figma.com/file/YfZSsl2gb6NWXvMm6brkDZ/Interfaz-TP-ANUAL-DDS?type=design&node-id=0%3A1&mode=design&t=7awfcrk2T5hExFhX-1)
+
 # java-base-project
 
 Esta es una plantilla de proyecto diseñada para: 
