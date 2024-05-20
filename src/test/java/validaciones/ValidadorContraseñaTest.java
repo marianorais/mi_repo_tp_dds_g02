@@ -1,5 +1,6 @@
 package validaciones;
 
+import Usuario.ValidadorContraseña;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
