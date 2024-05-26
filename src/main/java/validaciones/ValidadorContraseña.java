@@ -1,5 +1,7 @@
 package validaciones;
 
+import Excepciones.ValidadorContraseñaException;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Arrays;
@@ -7,18 +9,18 @@ import java.util.Scanner;
 import java.util.regex.Pattern;
 
 public class ValidadorContraseña {
-    private static String[] top10000PasswordsWeak;
+    private static String[] top10000ContraseñasDebil;
 
     public ValidadorContraseña() {
         try {
-            top10000PasswordsWeak = getTop10000Passwords();
+            top10000ContraseñasDebil = obtenerTop10000ContraseniasDebil();
         } catch (IOException e) {
             System.out.println("Error al obtener la lista de las 10,000 contraseñas más comunes.");
             e.printStackTrace();
         }
     }
 
-    private String[] getTop10000Passwords() throws IOException {
+    private String[] obtenerTop10000ContraseniasDebil() throws IOException {
         String filePath = "documentacion/top-10000-weak-passwords.txt";
         InputStream inputStream = getClass().getClassLoader().getResourceAsStream(filePath);
         Scanner scanner = new Scanner(inputStream);
@@ -30,13 +32,13 @@ public class ValidadorContraseña {
         return stringBuilder.toString().split("\n");
     }
 
-    private boolean isWeakPassword(String password) {
+    private boolean esContraseñaDebil(String password) {
 
-        return Arrays.asList(top10000PasswordsWeak).contains(password);
+        return Arrays.asList(top10000ContraseñasDebil).contains(password);
 
     }
 
-    private boolean isStrongPassword(String password) {
+    private boolean esContraseñaFuerte(String password) {
         // Longitud mínima de 8 caracteres y maxima de 64
         int passwordLength = password.length();
 
@@ -54,17 +56,15 @@ public class ValidadorContraseña {
         return true;
     }
 
-    public boolean validarContrasenia(String password){
-        boolean isWeakPassword = isWeakPassword(password);
-        boolean isStrongPassword = isStrongPassword(password);
+    public boolean validarContrasenia(String password) throws ValidadorContraseñaException {
 
-        return isStrongPassword && !isWeakPassword;
+        boolean esContraseñaDebil = esContraseñaDebil(password);
+        boolean esContraseñaFuerte = esContraseñaFuerte(password);
 
-        //if (isWeakPassword) {
-        //    System.out.println("La contraseña es débil, por favor elija una más segura.");
-        //} else if (!isStrongPassword) {
-        //    System.out.println("La contraseña no cumple con los requisitos de seguridad.");
-        //} else {
-        //    System.out.println("La contraseña es segura.");
+        if (esContraseñaFuerte && !esContraseñaDebil) {
+            return true;
+        } else {
+            throw new ValidadorContraseñaException("La contraseña no cumple con los requisitos de seguridad.");
+        }
     }
 }
