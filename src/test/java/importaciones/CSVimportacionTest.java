@@ -11,7 +11,7 @@ public class CSVimportacionTest {
     public void importacionTest() throws ValidadorContraseñaException {
 
         CSVimportacion csVimportacion = new CSVimportacion();
-        csVimportacion.importData("C:/Users/pc/OneDrive/Pictures/datacorona (2).csv");
+        csVimportacion.importData("C:/Disenio/csvEntrega2.csv");
 
         String contrasenia = "ContraValida123";
         ValidadorContraseña validadorContraseña = new ValidadorContraseña();
