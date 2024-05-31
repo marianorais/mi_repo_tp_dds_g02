@@ -1,4 +1,4 @@
-package Persona;
+package DatosDePersonas;
 
 public enum Rubro {
     Gastronomia,

@@ -2,8 +2,8 @@ package Colaboradores;
 
 import Persona.Oferta;
 import Usuario.Usuario;
-import Varios.Direccion;
-import Varios.medioDeContacto;
+import DatosDePersonas.Direccion;
+import DatosDePersonas.medioDeContacto;
 
 public class Colaborador {
     private Direccion direccion;

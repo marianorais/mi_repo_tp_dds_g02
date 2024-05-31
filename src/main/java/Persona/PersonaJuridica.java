@@ -1,6 +1,7 @@
 package Persona;
 
 import Colaboradores.Colaborador;
+import DatosDePersonas.*;;
 
 public class PersonaJuridica extends Colaborador {
 

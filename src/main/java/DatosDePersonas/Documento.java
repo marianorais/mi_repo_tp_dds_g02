@@ -1,4 +1,4 @@
-package Varios;
+package DatosDePersonas;
 
 public enum Documento {
     LC,

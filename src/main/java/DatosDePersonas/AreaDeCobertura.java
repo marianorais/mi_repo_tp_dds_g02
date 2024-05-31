@@ -1,5 +1,4 @@
-package Persona;
-import Ubicacion.*;
+package DatosDePersonas;
 
 public class AreaDeCobertura {
     private Ubicacion ubicacion;

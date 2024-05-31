@@ -1,4 +1,4 @@
-package Varios;
+package DatosDePersonas;
 
 public class Direccion {
     private Integer altura;

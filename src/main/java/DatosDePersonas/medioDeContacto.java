@@ -1,4 +1,4 @@
-package Varios;
+package DatosDePersonas;
 
 public enum medioDeContacto {
     WhatsApp,

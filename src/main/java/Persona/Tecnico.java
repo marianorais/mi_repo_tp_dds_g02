@@ -1,5 +1,6 @@
 package Persona;
 
+import DatosDePersonas.*;
 import lombok.Setter;
 
 public class Tecnico
@@ -7,18 +8,20 @@ public class Tecnico
     @Setter
     private String nombre;
     @Setter
-    private Documento documento;
+    private Documento tipoDocumento;
+    @Setter
+    private String numDocumento;
     @Setter
     private Integer cuil;
     @Setter
-    private MedioDeContacto contacto;
+    private medioDeContacto contacto;
     @Setter
     private AreaDeCobertura cobertura;
 
-    public Tecnico(String nombre, Documento documento, Integer cuil, MedioDeContacto contacto, AreaDeCobertura cobertura)
+    public Tecnico(String nombre, Documento documento, Integer cuil, medioDeContacto contacto, AreaDeCobertura cobertura)
     {
         this.nombre = nombre;
-        this.documento = documento;
+        this.tipoDocumento = documento;
         this.cuil = cuil;
         this.contacto = contacto;
         this.cobertura = cobertura;

@@ -1,5 +1,7 @@
 package Persona;
 
+import DatosDePersonas.Rubro;
+
 public class Oferta {
     String nombre;
 

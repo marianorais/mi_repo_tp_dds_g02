@@ -1,4 +1,4 @@
-package Ubicacion;
+package DatosDePersonas;
 
 public class Ubicacion {
     private Double longitud;

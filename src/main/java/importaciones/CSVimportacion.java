@@ -1,6 +1,6 @@
 package importaciones;
 
-import Varios.Documento;
+import DatosDePersonas.Documento;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
