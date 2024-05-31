@@ -1,2 +1,5 @@
-package Heladera;public class Heladera {
+package Heladera;
+
+public class Heladera {
+    //TODO
 }
