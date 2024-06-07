@@ -1,4 +1,4 @@
-package TarjetaAlimentaria;
+package Tarjetas;
 
 import java.time.LocalDate;
 import Heladera.*;

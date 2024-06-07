@@ -2,8 +2,8 @@ package importaciones;
 
 import Formularios.Formulario;
 import Formularios.Pregunta;
-import Persona.PersonaFisica;
-import Persona.PersonaJuridica;
+import Personas.PersonaFisica;
+import Personas.PersonaJuridica;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

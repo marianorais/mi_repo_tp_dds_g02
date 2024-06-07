@@ -1,4 +1,4 @@
-package Persona;
+package Personas;
 
 import DatosDePersonas.Rubro;
 

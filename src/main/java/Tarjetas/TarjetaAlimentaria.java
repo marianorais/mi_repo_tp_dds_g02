@@ -1,6 +1,6 @@
-package TarjetaAlimentaria;
+package Tarjetas;
 
-import Persona.PersonaVulnerable;
+import Personas.PersonaVulnerable;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -13,7 +13,7 @@ public class TarjetaAlimentaria {
     public TarjetaAlimentaria(String codigo, PersonaVulnerable titular) {
         this.codigo = codigo;
         this.titular = titular;
-        this.limiteUsosDiarios = 4 + 2 * titular.getCantMenoresACargo();
+        this.limiteUsosDiarios = 4 + 2 * titular.getMenoresACargo();
         this.usos = new ArrayList<>();
     }
 

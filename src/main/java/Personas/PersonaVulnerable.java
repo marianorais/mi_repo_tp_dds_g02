@@ -1,9 +1,9 @@
-package Persona;
+package Personas;
 
 import java.time.LocalDate;
 import DatosDePersonas.*;
 import Usuario.*;
-import TarjetaAlimentaria.*;
+import Tarjetas.*;
 import lombok.Getter;
 
 public class PersonaVulnerable {
@@ -14,9 +14,8 @@ public class PersonaVulnerable {
     private Direccion domicilio;
     private Documento tipoDocumento;
     private String numDocumento;
-    private Boolean menoresACargo;
     @Getter
-    private Integer cantMenoresACargo; // creo que con solo este atributo alcanza, no es necesario el de arriba
+    private Integer menoresACargo;
     private Usuario usuario;
     private PersonaFisica registrador;
     private TarjetaAlimentaria tarjeta;
@@ -33,8 +32,7 @@ public class PersonaVulnerable {
         this.domicilio = domicilio;
         this.tipoDocumento = tipoDocumento;
         this.numDocumento = numDocumento;
-        this.menoresACargo = menoresACargo;
-        this.cantMenoresACargo = cantMenoresACargo;
+        this.menoresACargo = cantMenoresACargo;
         this.usuario = usuario;
         this.registrador = registrador;
         this.tarjeta = tarjeta;
