@@ -7,6 +7,6 @@ public class PersonaVulnerableTest {
 
     @Test
     public void usarTarjetaExitosamente(){
-        PersonaVulnerable persona 
+        //TODO
     }
 }
