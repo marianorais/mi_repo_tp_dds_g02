@@ -9,6 +9,9 @@
 ## FIGMA (BOCETO)
 * [Figma](https://www.figma.com/file/YfZSsl2gb6NWXvMm6brkDZ/Interfaz-TP-ANUAL-DDS?type=design&node-id=0%3A1&mode=design&t=7awfcrk2T5hExFhX-1)
 
+## POSTMAN (API MOCK)
+* [Postman API](https://161b065f-e093-4d07-a9d8-b5b54974db81.mock.pstmn.io/api/heladeras/recomendaciones)
+
 # java-base-project
 
 Esta es una plantilla de proyecto diseñada para: 
