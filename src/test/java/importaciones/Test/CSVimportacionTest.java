@@ -1,7 +1,5 @@
-package importaciones;
+package importaciones.Test;
 
-import Excepciones.ValidadorContraseñaException;
-import Usuario.ValidadorContraseña;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;

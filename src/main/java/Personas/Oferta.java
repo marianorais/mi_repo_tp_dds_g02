@@ -1,14 +1,11 @@
 package Personas;
 
 import DatosDePersonas.Rubro;
+import lombok.Getter;
 
 public class Oferta {
     String nombre;
-
+    @Getter
     Double cantPuntosNecesarios;
     Rubro rubro;
-
-    public Double getCantPuntosNecesarios(){
-        return this.cantPuntosNecesarios;
-    }
 }

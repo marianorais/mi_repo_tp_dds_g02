@@ -2,8 +2,6 @@ package Colaboradores.Test;
 
 import Colaboradores.DonarDinero;
 import Colaboradores.TipoColaboracion;
-import Personas.PersonaFisica;
-import importaciones.CSVimportacion;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;

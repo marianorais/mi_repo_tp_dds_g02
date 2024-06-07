@@ -1,4 +1,4 @@
-package validaciones;
+package validaciones.Test;
 
 import Usuario.ValidadorContraseña;
 import Excepciones.ValidadorContraseñaException;

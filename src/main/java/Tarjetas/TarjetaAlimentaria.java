@@ -18,7 +18,7 @@ public class TarjetaAlimentaria {
     }
 
     public Boolean puedeUsarse() {
-        if (this.limiteUsosDiarios > 0)
+        if(this.limiteUsosDiarios > 0)
             return true;
         else
             return false;
