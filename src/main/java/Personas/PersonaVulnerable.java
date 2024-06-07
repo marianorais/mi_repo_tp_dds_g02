@@ -5,6 +5,7 @@ import DatosDePersonas.*;
 import Usuario.*;
 import Tarjetas.*;
 import lombok.Getter;
+import Excepciones.*;
 
 public class PersonaVulnerable {
     private String nombre;
@@ -36,5 +37,9 @@ public class PersonaVulnerable {
         this.usuario = usuario;
         this.registrador = registrador;
         this.tarjeta = tarjeta;
+    }
+
+    public void usarTarjeta(Uso uso) throws LimiteDiarioAlcanzadoException {
+        this.tarjeta.registrarUso(uso);
     }
 }
