@@ -4,5 +4,5 @@ public enum Documento {
     LC,
     LE,
     DNI,
-    PASAPORTE
+    PASAPORTE;
 }

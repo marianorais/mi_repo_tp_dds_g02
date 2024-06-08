@@ -19,12 +19,13 @@ public class PersonaVulnerable {
     private Integer menoresACargo;
     private Usuario usuario;
     private PersonaFisica registrador;
+    @Getter
     private TarjetaAlimentaria tarjeta;
 
     public PersonaVulnerable(String nombre, LocalDate fechaNacimiento, LocalDate fechaRegistro,
                              Boolean situacionDeCalle, Direccion domicilio, Documento tipoDocumento,
-                             String numDocumento, Boolean menoresACargo, Integer cantMenoresACargo,
-                             Usuario usuario, PersonaFisica registrador, TarjetaAlimentaria tarjeta)
+                             String numDocumento, Integer cantMenoresACargo, Usuario usuario,
+                             PersonaFisica registrador, TarjetaAlimentaria tarjeta)
     {
         this.nombre = nombre;
         this.fechaNacimiento = fechaNacimiento;

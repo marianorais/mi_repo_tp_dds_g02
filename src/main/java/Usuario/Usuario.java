@@ -10,4 +10,10 @@ public class Usuario {
     String contrasenia;
     //aca iria formulario
     ValidadorContraseña validadorContraseña;
+
+    public Usuario(String nombreUsuario, String contrasenia, ValidadorContraseña validadorContraseña) {
+        this.nombreUsuario = nombreUsuario;
+        this.contrasenia = contrasenia;
+        this.validadorContraseña = validadorContraseña;
+    }
 }
