@@ -1,7 +1,7 @@
 package Personas.Test;
 
 import DatosDePersonas.*;
-import Excepciones.LimiteDiarioAlcanzadoException;
+import Excepciones.*;
 import Tarjetas.*;
 import Usuario.*;
 import Personas.*;
@@ -24,7 +24,7 @@ public class PersonaVulnerableTest {
 
         PersonaVulnerable persona = new PersonaVulnerable("Pedro", LocalDate.of(1994, 6, 15),
                                                             LocalDate.of(2024, 1, 27), false,
-                                                            new Direccion(2345, "Avenida Santa Fe"), DNI, "12345678",
+                                                            new Direccion(2345, new Calle("Avenida Santa Fe")), DNI, "12345678",
                                                             1, mock(Usuario.class), mock(PersonaFisica.class),
                                                             new TarjetaAlimentaria("12345678911", 1));
 
@@ -37,7 +37,7 @@ public class PersonaVulnerableTest {
 
         PersonaVulnerable persona = new PersonaVulnerable("Pedro", LocalDate.of(1994, 6, 15),
                                                             LocalDate.of(2024, 1, 27), false,
-                                                            new Direccion(2345, "Avenida Santa Fe"), DNI, "12345678",
+                                                            new Direccion(2345, new Calle("Avenida Santa Fe")), DNI, "12345678",
                                                             1, mock(Usuario.class), mock(PersonaFisica.class),
                                                             new TarjetaAlimentaria("12345678911", 1));
 
@@ -53,7 +53,7 @@ public class PersonaVulnerableTest {
 
         PersonaVulnerable persona = new PersonaVulnerable("Pedro", LocalDate.of(1994, 6, 15),
                                                             LocalDate.of(2024, 1, 27), false,
-                                                            new Direccion(2345, "Avenida Santa Fe"), DNI, "12345678",
+                                                            new Direccion(2345, new Calle("Avenida Santa Fe")), DNI, "12345678",
                                                             1, mock(Usuario.class), mock(PersonaFisica.class),
                                                             new TarjetaAlimentaria("12345678911", 1));
 
