@@ -59,10 +59,10 @@ public class PersonaVulnerableTest {
 
         for(int i=0; i<6; i++) {// agoto los 6 usos de tarjeta disponibles para Pedro.
             //en realidad la fecha del uso debe ser siempre LocalDate.now() pero paso fecha para no tener que actualizar la del cambio de dia
-            persona.usarTarjeta(new Uso(LocalDate.of(2024, 6, 8), mock(Heladera.class), mock(Vianda.class)));
+            persona.usarTarjeta(new Uso(LocalDate.of(2024, 6, 7), mock(Heladera.class), mock(Vianda.class)));
         }
-        // el 7mo uso se realiza al día siguiente 09/08/24 por lo que debería poder hacerse
-        persona.usarTarjeta(new Uso(LocalDate.of(2024, 6, 9), mock(Heladera.class), mock(Vianda.class)));
+        // el 7mo uso se realiza al día siguiente 08/06/24 por lo que debería poder hacerse
+        persona.usarTarjeta(new Uso(LocalDate.of(2024, 6, 8), mock(Heladera.class), mock(Vianda.class)));
 
         assertEquals(5, persona.getTarjeta().getLimiteUsosDiarios());
     }
