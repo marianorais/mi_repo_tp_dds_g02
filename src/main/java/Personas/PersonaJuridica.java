@@ -1,6 +1,7 @@
 package Personas;
 
-import Colaboraciones.*;
+import Colaboradores.Colaboracion;
+import Colaboradores.TipoColaboracion;
 import Formularios.Formulario;
 import Usuario.Usuario;
 

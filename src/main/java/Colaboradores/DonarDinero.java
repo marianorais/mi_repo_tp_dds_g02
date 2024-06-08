@@ -9,13 +9,13 @@ import java.util.Date;
 
 public class DonarDinero implements Colaboracion{
 
-    private float monto;
+    private double monto;
 
     private LocalDate fecha;
     private Frecuencia frecuencia; //no definimos como hacer esto
     TipoColaboracion tipoColab ;
 
-    public DonarDinero(float monto, LocalDate fecha, Frecuencia frecuencia, TipoColaboracion tipoColab) {
+    public DonarDinero(double monto, LocalDate fecha, Frecuencia frecuencia, TipoColaboracion tipoColab) {
         this.monto =monto; //no deberia ser negativo esto no se como se maneja ni donde?
         this.frecuencia= frecuencia;
         this.fecha=fecha;
