@@ -2,15 +2,16 @@ package Colaboradores;
 
 import Heladera.Heladera;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class HacerseCargoHeladera implements Colaboracion{
 
     private Heladera heladera;
-    private Date fecha;
+    private LocalDate fecha;
     private TipoColaboracion tipoColab;
 
-    public HacerseCargoHeladera(Heladera heladera, Date fecha, TipoColaboracion tipoColab) {
+    public HacerseCargoHeladera(Heladera heladera, LocalDate fecha, TipoColaboracion tipoColab) {
         this.heladera = heladera;
         this.fecha = fecha;
         this.tipoColab = tipoColab;
@@ -21,7 +22,7 @@ public class HacerseCargoHeladera implements Colaboracion{
     public double calcularPuntaje() {
         return mesesQuePasaron(this.fecha)* tipoColab.getCoeficiente(); //me suena que tendiramos que poner un if heladera esta activa
     }
-    private int mesesQuePasaron(Date fecha){
+    private int mesesQuePasaron(LocalDate fecha){
         return 3;
-    }
+    } //esta hardcodeado
 }
