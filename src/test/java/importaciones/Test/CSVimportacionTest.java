@@ -16,15 +16,6 @@ public class CSVimportacionTest {
         assertTrue(!csVimportacion.getPersonasFisicas().isEmpty());
     }
     @Test
-    public void importacionPersonasFisicasIncorrecta() {
-
-        CSVimportacion csVimportacion = new CSVimportacion();
-        String filePath = "path_incorrecto";
-        csVimportacion.importData(filePath);
-
-        assertTrue(csVimportacion.getPersonasFisicas().isEmpty());
-    }
-    @Test
     public void importacionPersonasJuridicasCorrecta() {
 
         CSVimportacion csVimportacion = new CSVimportacion();
@@ -34,12 +25,12 @@ public class CSVimportacionTest {
         assertTrue(!csVimportacion.getPersonasJuridicas().isEmpty());
     }
     @Test
-    public void importacionPersonasJuridicasIncorrecta() {
+    public void importacionIncorrecta() {
 
         CSVimportacion csVimportacion = new CSVimportacion();
         String filePath = "path_incorrecto";
         csVimportacion.importData(filePath);
 
-        assertTrue(csVimportacion.getPersonasJuridicas().isEmpty());
+        assertTrue(csVimportacion.getPersonasJuridicas().isEmpty() && csVimportacion.getPersonasFisicas().isEmpty());
     }
 }

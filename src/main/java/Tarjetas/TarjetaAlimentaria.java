@@ -9,8 +9,8 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class TarjetaAlimentaria {
-    private final String codigo;
-    private final Integer menoresACargo;
+    private  String codigo;
+    private  Integer menoresACargo;
     @Getter
     private Integer limiteUsosDiarios;
     private final List<Uso> usos;
@@ -19,6 +19,10 @@ public class TarjetaAlimentaria {
         this.codigo = codigo;
         this.menoresACargo = menoresACargo;
         this.limiteUsosDiarios = 4 + 2 * this.menoresACargo;
+        this.usos = new ArrayList<>();
+    }
+
+    public TarjetaAlimentaria() {
         this.usos = new ArrayList<>();
     }
 

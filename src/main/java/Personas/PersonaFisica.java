@@ -15,8 +15,11 @@ public class PersonaFisica {
     private List<TipoColaboracion> colaboracionesPermitidas;
 
     public PersonaFisica(Formulario formulario) {
+        this.colaboracionesRealizadas = new ArrayList<>();
+        this.colaboracionesPermitidas = new ArrayList<>();
         this.formulariosRespondidos = new ArrayList<>();
         this.formulariosRespondidos.add(formulario);
+
     }
 
     public double calcularPuntaje(){
@@ -24,8 +27,8 @@ public class PersonaFisica {
                                         .mapToDouble(colaboracion->colaboracion.calcularPuntaje())
                                         .sum();
     }
-    public void registrarColaboracion(){
-    //TODO
+    public void registrarColaboracion(Colaboracion colaboracion){
+        this.colaboracionesRealizadas.add(colaboracion);
     }
     public void canjearPuntos(){
         //TODO

@@ -1,16 +1,23 @@
 package importaciones.Test;
 
+import Colaboradores.*;
 import Formularios.Formulario;
 import Formularios.Pregunta;
+import Heladera.Heladera;
+import Heladera.Vianda;
 import Personas.PersonaFisica;
 import Personas.PersonaJuridica;
+import Tarjetas.TarjetaAlimentaria;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import static Colaboradores.Frecuencia.MENSUAL;
 
 public class CSVimportacion {
     private List<PersonaJuridica> personasJuridicas ;
@@ -31,37 +38,46 @@ public class CSVimportacion {
                 String[] data = line.split(separator);
 
                 //Normalizo datos
-                String documento =  data[0]; //Enum tipo documento
+                String documento =  data[0];
                 String nroDoc = data[1];
                 String nombre = data[2];
                 String apellido = data[3];
                 String email = data[4];
-                String fecha = data[5]; //Datetime fecha agregado
-                String donacion = data[6]; //Tipo de donacion
-                String cantidad = data[7]; //Cantidad donacion
+                String fecha = data[5];
+                String donacion = data[6];
+                String cantidad = data[7];
 
                 //Creo el formulario con los datos
                 Formulario nuevoFormulario = crearFormulario(documento,nroDoc,nombre,apellido,email,fecha);
 
-                // Imprimir todos los datos
-                System.out.println(Arrays.toString(data));
-
-                //TODO GUARDADO DE DATOS
                 switch(donacion.toUpperCase()){
                     case "DINERO":
                         PersonaJuridica personaJuridica = new PersonaJuridica(nuevoFormulario);
+                        TipoColaboracion tipoDonarDinero = new TipoColaboracion(0.5);
+                        Colaboracion colaboracion = new DonarDinero(Float.parseFloat(cantidad), LocalDate.now(), MENSUAL, tipoDonarDinero);
+                        personaJuridica.registrarColaboracion(colaboracion);
                         this.personasJuridicas.add(personaJuridica);
                         break;
                     case "DONACION_VIANDAS":
                         PersonaFisica personaFisica = new PersonaFisica(nuevoFormulario);
+                        TipoColaboracion tipoDonarVianda = new TipoColaboracion(0.5);
+                        Vianda vianda = new Vianda();
+                        Colaboracion colaboracionViandas = new DonarVianda(vianda, tipoDonarVianda);
+                        personaFisica.registrarColaboracion(colaboracionViandas);
                         this.personasFisicas.add(personaFisica);
                         break;
                     case "REDISTRIBUCION_VIANDAS":
                         PersonaFisica personaFisica2 = new PersonaFisica(nuevoFormulario);
+                        TipoColaboracion tipoDistribuirVianda = new TipoColaboracion(0.5);
+                        Colaboracion colaboracionRedistribucionVianda = new DistribuirVianda(Integer.parseInt(cantidad), tipoDistribuirVianda);
+                        personaFisica2.registrarColaboracion(colaboracionRedistribucionVianda);
                         this.personasFisicas.add(personaFisica2);
                         break;
                     case "ENTREGA_TARJETAS":
                         PersonaFisica personaFisica3 = new PersonaFisica(nuevoFormulario);
+                        TipoColaboracion tipoRegistrarVulnerable = new TipoColaboracion(0.5);
+                        Colaboracion colaboracionRegistroVulnerable = new RegistrarPersonaVulnerable(new TarjetaAlimentaria(), tipoRegistrarVulnerable);
+                        personaFisica3.registrarColaboracion(colaboracionRegistroVulnerable);
                         this.personasFisicas.add(personaFisica3);
                         break;
                     default:

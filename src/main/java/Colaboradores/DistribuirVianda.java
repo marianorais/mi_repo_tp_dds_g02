@@ -17,6 +17,10 @@ public class DistribuirVianda implements Colaboracion{
         this.motivo = motivo;
         this.tipoColab = tipoColab;
     }
+    public DistribuirVianda(int cantidadViandas, TipoColaboracion tipoColab) {
+        this.cantidadViandas = cantidadViandas;
+        this.tipoColab = tipoColab;
+    }
 
 
     @Override

@@ -20,6 +20,8 @@ public class PersonaJuridica{
     private List<TipoColaboracion> colaboracionesPermitidas;
 
     public PersonaJuridica(Formulario formulario) {
+        this.colaboracionesRealizadas = new ArrayList<>();
+        this.colaboracionesPermitidas = new ArrayList<>();
         this.formulariosRespondidos = new ArrayList<>();
         this.formulariosRespondidos.add(formulario);
     }
@@ -31,8 +33,9 @@ public class PersonaJuridica{
     public Oferta ofrecerProductos(){
         return new Oferta();
     }
-    public void registrarColaboracion(){
-        //TODO
+
+    public void registrarColaboracion(Colaboracion colaboracion){
+        this.colaboracionesRealizadas.add(colaboracion);
     }
     public void canjearPuntos(){
         //TODO
