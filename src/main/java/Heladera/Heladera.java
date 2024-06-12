@@ -17,6 +17,14 @@ public class Heladera {
     private Double temperaturaActual;
     private Boolean sensorMovimientoActivado;
 
+    public void setTemperaturaMinima(Double temperaturaMinima) {
+        this.temperaturaMinima = temperaturaMinima;
+    }
+
+    public void setTemperaturaMaxima(Double temperaturaMaxima) {
+        this.temperaturaMaxima = temperaturaMaxima;
+    }
+
     // Siento que es demasiado grande el constructor
     public Heladera(Ubicacion ubicacion, Direccion direccion, String nombre, LocalDate fechaPuestaEnFuncionamiento, Boolean activa, Integer cantViandas, Double temperaturaMinima, Double temperaturaMaxima, Double temperaturaActual, Boolean sensorMovimientoActivado) {
         this.ubicacion = ubicacion;
@@ -38,5 +46,17 @@ public class Heladera {
 
     public void sacarVianda(){
 
+    }
+
+    public Boolean estaDentroDelRango(Double temperatura){
+        return temperatura > this.temperaturaMinima && temperatura < this.temperaturaMaxima;
+    }
+
+    public void reportarTemperatura(Double temperatura){
+        // TODO
+        this.temperaturaActual = temperatura;
+        if( !estaDentroDelRango(temperatura) ){
+            this.activa = false;
+        }
     }
 }
