@@ -27,15 +27,4 @@ public class Vianda {
     public void entregar() {
 
     }
-
-    // TODO - No entiendo porque estos métodos están tanto en la clase de la heladera como acá, REVISAR!!
-    public void agregarAHeladera() {
-
-    }
-    public void quitarDeHeladera() {
-
-    }
-
-
-
 }

@@ -38,8 +38,7 @@ public class Heladera {
         this.temperaturaActual = temperaturaActual;
         this.sensorMovimientoActivado = sensorMovimientoActivado;
     }
-
-    // TODO - No entiendo porque estos métodos están tanto en la clase de la vianda como acá, REVISAR!!
+    
     public void agregarVianda(){
 
     }
