@@ -18,6 +18,7 @@ public class PersonaFisicaTest {
     TipoColaboracion tipoDonarDinero = new TipoColaboracion(0.5);
     TipoColaboracion tipoDistribuirVianda = new TipoColaboracion(1);
     TipoColaboracion tipoDonarVianda = new TipoColaboracion(1.5);
+    // TODO - los test funcionaban porque la clase Vianda estaba vacia
     Vianda viandaPrueba = new Vianda();
     Formulario formGenerico = new Formulario();
     @Test

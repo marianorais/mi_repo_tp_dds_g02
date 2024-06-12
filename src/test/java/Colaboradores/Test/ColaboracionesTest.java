@@ -19,6 +19,7 @@ public class ColaboracionesTest {
     TipoColaboracion tipoDonarVianda = new TipoColaboracion(1.5);
     TipoColaboracion tipoTarjetaRepartida = new TipoColaboracion(2);
     TipoColaboracion tipoHeladeras = new TipoColaboracion(5);
+    // TODO - los test funcionaban porque las clases de Vianda y Heladera estaban vacias
     Vianda v1 = new Vianda();
     TarjetaAlimentaria t1 = new TarjetaAlimentaria();
     Heladera h1 = new Heladera();
