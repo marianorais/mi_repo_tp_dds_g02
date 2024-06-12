@@ -13,6 +13,7 @@ public class CSVimportacionTest {
         String filePath = "src/main/resources/documentacion/csvEntrega2.csv";
         csVimportacion.importData(filePath);
 
+        // Se podría poner assertFalse
         assertTrue(!csVimportacion.getPersonasFisicas().isEmpty());
     }
     @Test
