@@ -19,6 +19,8 @@ public class PersonaJuridica{
     private List<Colaboracion> colaboracionesRealizadas;
     private List<TipoColaboracion> colaboracionesPermitidas;
 
+    private List<Oferta> productosOfrecidos;
+
     public PersonaJuridica(Formulario formulario) {
         this.colaboracionesRealizadas = new ArrayList<>();
         this.colaboracionesPermitidas = new ArrayList<>();
@@ -30,8 +32,8 @@ public class PersonaJuridica{
                 .mapToDouble(colaboracion->colaboracion.calcularPuntaje())
                 .sum();
     }
-    public Oferta ofrecerProductos(){
-        return new Oferta();
+    public void ofrecerProductos(Oferta oferta){
+        this.productosOfrecidos.add(oferta);
     }
 
     public void registrarColaboracion(Colaboracion colaboracion){

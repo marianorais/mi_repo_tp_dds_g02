@@ -57,6 +57,7 @@ public class Heladera {
         this.temperaturaActual = temperatura;
         if( !estaDentroDelRango(temperatura) ){
             this.activa = false;
+            // enviarAlerta() -> Como hace el sensor para enviar la temperatura? Como y a quien le enviamos la alerta?
         }
     }
 }
