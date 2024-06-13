@@ -17,6 +17,7 @@ import static org.junit.Assert.assertEquals;
 
 public class PersonaJuridicaTest {
     TipoColaboracion tipoDonarDinero = new TipoColaboracion(0.5);
+    TipoColaboracion tipoHacerseCargoHeladera = new TipoColaboracion(5);
     TipoColaboracion tipoDistribuirVianda = new TipoColaboracion(1);
     Formulario formGenerico = new Formulario();
 
