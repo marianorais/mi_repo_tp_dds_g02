@@ -15,4 +15,6 @@ public class Uso {
         this.heladera = heladera;
         this.vianda = vianda;
     }
+
+    // TODO - getFecha() - falta este metodo
 }

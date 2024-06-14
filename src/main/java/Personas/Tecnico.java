@@ -5,6 +5,7 @@ import lombok.Setter;
 
 public class Tecnico
 {
+    // Creo que se puede poner un @Setter solo general y se hace el setter de todos
     @Setter
     private String nombre;
     @Setter

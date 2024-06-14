@@ -25,7 +25,6 @@ public class Heladera {
         this.temperaturaMaxima = temperaturaMaxima;
     }
 
-    // Siento que es demasiado grande el constructor
     public Heladera(Ubicacion ubicacion, Direccion direccion, String nombre, LocalDate fechaPuestaEnFuncionamiento, Boolean activa, Integer cantViandas, Double temperaturaMinima, Double temperaturaMaxima, Double temperaturaActual, Boolean sensorMovimientoActivado) {
         this.ubicacion = ubicacion;
         this.direccion = direccion;
@@ -40,11 +39,11 @@ public class Heladera {
     }
     
     public void agregarVianda(){
-
+        // TODO
     }
 
     public void sacarVianda(){
-
+        // TODO
     }
 
     public Boolean estaDentroDelRango(Double temperatura){
