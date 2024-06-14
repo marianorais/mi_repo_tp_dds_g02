@@ -20,7 +20,6 @@ public class PersonaFisicaTest {
     TipoColaboracion tipoDonarDinero = new TipoColaboracion(0.5);
     TipoColaboracion tipoRegistrarPersonaVulnerable = new TipoColaboracion(2);
     TipoColaboracion tipoDonarVianda = new TipoColaboracion(1.5);
-    // TODO - los test funcionaban porque la clase Vianda estaba vacia
     Heladera h1 = new Heladera(new Ubicacion(12.00,45.23),new Direccion(3000,new Calle("Medriano")),
             "Heladera Medrano",LocalDate.of(2000,10,9),Boolean.TRUE,15,
             1.31, 40.62,15.87,Boolean.TRUE);

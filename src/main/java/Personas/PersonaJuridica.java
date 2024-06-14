@@ -3,6 +3,7 @@ package Personas;
 import Colaboradores.Colaboracion;
 import Colaboradores.TipoColaboracion;
 import Formularios.Formulario;
+import Heladera.Heladera;
 import Usuario.Usuario;
 
 import java.util.ArrayList;
@@ -10,9 +11,8 @@ import java.util.List;
 
 public class PersonaJuridica{
 
-    /* FALTAN ESTOS ATRIBUTOS
-    - heladerasACargo : List<Heladera>
-    - recomendador : RecomendadorUbicacion*/
+    private List<Heladera> heladerasACargo;
+    // private RecomendadorUbicacion recomendador; // TODO
     private Usuario usuario;
     private List<Formulario> formulariosRespondidos;
 
@@ -40,7 +40,11 @@ public class PersonaJuridica{
         this.colaboracionesRealizadas.add(colaboracion);
     }
     public void canjearPuntos(){
-        //TODO
+        // TODO
+    }
+
+    public void ofrecerProducto(Oferta oferta){
+        // TODO
     }
     public void agregarFormulario(Formulario formulario){
         this.formulariosRespondidos.add(formulario);

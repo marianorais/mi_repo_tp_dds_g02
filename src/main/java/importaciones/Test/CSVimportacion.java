@@ -62,7 +62,6 @@ public class CSVimportacion {
                     case "DONACION_VIANDAS":
                         PersonaFisica personaFisica = new PersonaFisica(nuevoFormulario);
                         TipoColaboracion tipoDonarVianda = new TipoColaboracion(0.5);
-                        // TODO - los test funcionaban porque la clase Vianda estaba vacia
                         Vianda vianda = mock(Vianda.class);
                         Colaboracion colaboracionViandas = new DonarVianda(vianda, tipoDonarVianda);
                         personaFisica.registrarColaboracion(colaboracionViandas);
