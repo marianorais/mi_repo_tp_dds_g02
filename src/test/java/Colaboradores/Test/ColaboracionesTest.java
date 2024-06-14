@@ -11,6 +11,7 @@ import java.time.LocalDate;
 import static Colaboradores.Frecuencia.MENSUAL;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.Mockito.mock;
 
 public class ColaboracionesTest {
     //no se si estan bien los test, x que si cambian el coeficiente se pudre
@@ -19,10 +20,9 @@ public class ColaboracionesTest {
     TipoColaboracion tipoDonarVianda = new TipoColaboracion(1.5);
     TipoColaboracion tipoTarjetaRepartida = new TipoColaboracion(2);
     TipoColaboracion tipoHeladeras = new TipoColaboracion(5);
-    // TODO - los test funcionaban porque las clases de Vianda y Heladera estaban vacias
-    Vianda v1 = new Vianda();
+    Vianda v1 = mock(Vianda.class);
     TarjetaAlimentaria t1 = new TarjetaAlimentaria();
-    Heladera h1 = new Heladera();
+    Heladera h1 = mock(Heladera.class);
 
     @Test
     public void elPuntajeDeHacerseCargoDeUnaHeladeraCon3HardCodeEs15() {

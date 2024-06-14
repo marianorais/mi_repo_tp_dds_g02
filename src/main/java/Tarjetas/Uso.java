@@ -2,10 +2,10 @@ package Tarjetas;
 
 import java.time.LocalDate;
 import Heladera.*;
+import lombok.Data;
 import lombok.Getter;
-
+@Data
 public class Uso {
-    @Getter
     private LocalDate fecha;
     private Heladera heladera;
     private Vianda vianda;
@@ -15,6 +15,4 @@ public class Uso {
         this.heladera = heladera;
         this.vianda = vianda;
     }
-
-    // TODO - getFecha() - falta este metodo
 }

@@ -2,16 +2,16 @@ package Tarjetas;
 
 import Personas.PersonaVulnerable;
 import Excepciones.*;
+import lombok.Data;
 import lombok.Getter;
 
 import java.time.LocalDate;
 import java.util.List;
 import java.util.ArrayList;
-
+@Data
 public class TarjetaAlimentaria {
     private  String codigo;
     private  Integer menoresACargo;
-    @Getter
     private Integer limiteUsosDiarios;
     private final List<Uso> usos;
 

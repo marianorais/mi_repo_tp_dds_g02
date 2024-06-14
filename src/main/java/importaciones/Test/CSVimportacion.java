@@ -16,6 +16,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import static org.mockito.Mockito.mock;
 
 import static Colaboradores.Frecuencia.MENSUAL;
 
@@ -62,7 +63,7 @@ public class CSVimportacion {
                         PersonaFisica personaFisica = new PersonaFisica(nuevoFormulario);
                         TipoColaboracion tipoDonarVianda = new TipoColaboracion(0.5);
                         // TODO - los test funcionaban porque la clase Vianda estaba vacia
-                        Vianda vianda = new Vianda();
+                        Vianda vianda = mock(Vianda.class);
                         Colaboracion colaboracionViandas = new DonarVianda(vianda, tipoDonarVianda);
                         personaFisica.registrarColaboracion(colaboracionViandas);
                         this.personasFisicas.add(personaFisica);

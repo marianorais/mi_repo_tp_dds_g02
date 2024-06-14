@@ -19,7 +19,6 @@ import static org.junit.Assert.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.mock;
 
-// TODO - Arreglar este test, persona.getTarjeta() no existe
 public class PersonaVulnerableTest {
     //------------------------------------- TEST DE USO DE TARJETA -------------------------------------------------------------------
 
