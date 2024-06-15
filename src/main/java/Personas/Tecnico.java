@@ -1,35 +1,23 @@
 package Personas;
 
 import DatosDePersonas.*;
+import lombok.Data;
 import lombok.Setter;
-
-public class Tecnico
-{
-    // Creo que se puede poner un @Setter solo general y se hace el setter de todos
-    @Setter
+@Data
+public class Tecnico {
     private String nombre;
-    @Setter
     private Documento tipoDocumento;
-    @Setter
     private String numDocumento;
-    @Setter
     private Integer cuil;
-    @Setter
     private medioDeContacto contacto;
-    @Setter
     private AreaDeCobertura cobertura;
 
-    public Tecnico(String nombre, Documento documento, Integer cuil, medioDeContacto contacto, AreaDeCobertura cobertura)
-    {
+    public Tecnico(String nombre, Documento documento, Integer cuil, medioDeContacto contacto, AreaDeCobertura cobertura){
         this.nombre = nombre;
         this.tipoDocumento = documento;
         this.cuil = cuil;
         this.contacto = contacto;
         this.cobertura = cobertura;
     }
-// Entiéndase a:
-//      Alta de técnico: instanciación de esta clase.
-//      Baja de técnico: método que elimine a un técnico de una lista o base de datos (no pertenece a esta capa).
-//      Modificación de técnico: utilización de setters de los atributos para modificar su informacion.
 
 }
