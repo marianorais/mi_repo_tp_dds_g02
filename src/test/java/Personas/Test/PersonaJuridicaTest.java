@@ -7,12 +7,15 @@ import Colaboradores.TipoColaboracion;
 import Formularios.Formulario;
 import Heladera.Vianda;
 
+import Personas.Oferta;
+import Personas.PersonaFisica;
 import Personas.PersonaJuridica;
 import org.junit.Test;
 
 import java.time.LocalDate;
 
 import static Colaboradores.Frecuencia.MENSUAL;
+import static DatosDePersonas.Rubro.Gastronomia;
 import static org.junit.Assert.assertEquals;
 
 public class PersonaJuridicaTest {
@@ -20,7 +23,7 @@ public class PersonaJuridicaTest {
     TipoColaboracion tipoHacerseCargoHeladera = new TipoColaboracion(5);
     TipoColaboracion tipoDistribuirVianda = new TipoColaboracion(1);
     Formulario formGenerico = new Formulario();
-
+    Oferta of1= new Oferta("Burguer luchada",30.00, Gastronomia);
     @Test
     public void losPuntosDeUnaPersonaVulnerableQueDono30YDistribuyo15Es30() {
         DonarDinero donacion30 = new DonarDinero(30, LocalDate.now(), MENSUAL, tipoDonarDinero);
@@ -58,5 +61,22 @@ public class PersonaJuridicaTest {
 
         assertEquals(116.00, personaJ1.calcularPuntaje(), 0.01);
     }
+    public void unaPersonaCanjeaPuntosParaUnaOferta(){
+        DonarDinero donacion30 = new DonarDinero(30, LocalDate.now(),MENSUAL,tipoDonarDinero);
+        DonarDinero donacion110 = new DonarDinero(110, LocalDate.now(),MENSUAL,tipoDonarDinero);
+        DonarDinero donacion59 = new DonarDinero(59, LocalDate.now(),MENSUAL,tipoDonarDinero);
 
+        PersonaFisica personaF1 = new PersonaFisica(formGenerico);
+
+        personaF1.registrarColaboracion(donacion30);
+        personaF1.registrarColaboracion(donacion110);
+        personaF1.registrarColaboracion(donacion59);
+
+        assertEquals(99.50, personaF1.calcularPuntaje(),0.01);
+
+        personaF1.canjearPuntos(of1);
+
+        assertEquals(69.50, personaF1.calcularPuntaje(),0.01);
+
+    }
 }

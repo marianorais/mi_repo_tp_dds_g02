@@ -20,32 +20,35 @@ public class PersonaJuridica{
     private List<TipoColaboracion> colaboracionesPermitidas;
 
     private List<Oferta> productosOfrecidos;
+    private Double puntosCanjeados;
 
     public PersonaJuridica(Formulario formulario) {
         this.colaboracionesRealizadas = new ArrayList<>();
         this.colaboracionesPermitidas = new ArrayList<>();
         this.formulariosRespondidos = new ArrayList<>();
         this.formulariosRespondidos.add(formulario);
+        this.puntosCanjeados=0.00;
     }
     public double calcularPuntaje(){
         return colaboracionesRealizadas.stream()
                 .mapToDouble(colaboracion->colaboracion.calcularPuntaje())
-                .sum();
+                .sum() - puntosCanjeados;
     }
-    public void ofrecerProductos(Oferta oferta){
+    public void ofrecerProducto(Oferta oferta){
         this.productosOfrecidos.add(oferta);
     }
 
     public void registrarColaboracion(Colaboracion colaboracion){
         this.colaboracionesRealizadas.add(colaboracion);
     }
-    public void canjearPuntos(){
-        // TODO
+    public void canjearPuntos(Oferta oferta){
+        if(oferta.cantPuntosNecesarios<= this.calcularPuntaje()){
+            //adquiere el producto
+            puntosCanjeados+= oferta.cantPuntosNecesarios;
+        }
     }
 
-    public void ofrecerProducto(Oferta oferta){
-        // TODO
-    }
+
     public void agregarFormulario(Formulario formulario){
         this.formulariosRespondidos.add(formulario);
     }

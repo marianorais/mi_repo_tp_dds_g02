@@ -8,4 +8,10 @@ public class Oferta {
     @Getter
     Double cantPuntosNecesarios;
     Rubro rubro;
+
+    public Oferta(String nombre, Double cantPuntosNecesarios, Rubro rubro) {
+        this.nombre = nombre;
+        this.cantPuntosNecesarios = cantPuntosNecesarios;
+        this.rubro = rubro;
+    }
 }
