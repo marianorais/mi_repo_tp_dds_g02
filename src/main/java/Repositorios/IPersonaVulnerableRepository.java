@@ -1,5 +1,5 @@
 package Repositorios;
 
 public interface IPersonaVulnerableRepository {
-    //TODO
+    // TODO - Interfaz Repositorio vacia (no relevante)
 }

@@ -4,6 +4,7 @@ import Colaboradores.Colaboracion;
 import Colaboradores.TipoColaboracion;
 import Formularios.Formulario;
 import Heladera.Heladera;
+import RecomendacionesUbicacion.RecomendadorUbicacion;
 import Usuario.Usuario;
 
 import java.util.ArrayList;
@@ -12,7 +13,7 @@ import java.util.List;
 public class PersonaJuridica{
 
     private List<Heladera> heladerasACargo;
-    // private RecomendadorUbicacion recomendador; // TODO
+    private RecomendadorUbicacion recomendador;
     private Usuario usuario;
     private List<Formulario> formulariosRespondidos;
 

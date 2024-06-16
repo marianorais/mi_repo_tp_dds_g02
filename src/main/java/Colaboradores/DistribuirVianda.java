@@ -10,6 +10,7 @@ public class DistribuirVianda implements Colaboracion{
     private String motivo;
     private TipoColaboracion tipoColab;
 
+    // TODO - Arreglar esto, tiene dos constructores
     public DistribuirVianda(int cantidadViandas, Heladera heladeraOrigen, Heladera heladeraDestino, String motivo, TipoColaboracion tipoColab) {
         this.cantidadViandas = cantidadViandas;
         this.heladeraOrigen = heladeraOrigen;
@@ -21,7 +22,6 @@ public class DistribuirVianda implements Colaboracion{
         this.cantidadViandas = cantidadViandas;
         this.tipoColab = tipoColab;
     }
-
 
     @Override
     public double calcularPuntaje() {

@@ -1,5 +1,5 @@
 package Personas.Test;
 
 public class TecnicoTest {
-    //TODO
+    // TODO - Completar test (no relevante)
 }

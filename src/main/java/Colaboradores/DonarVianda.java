@@ -1,5 +1,6 @@
 package Colaboradores;
 
+import Heladera.Heladera;
 import Heladera.Vianda;
 
 public class DonarVianda implements Colaboracion{
@@ -10,6 +11,8 @@ public class DonarVianda implements Colaboracion{
     public DonarVianda(Vianda vianda, TipoColaboracion tipoColab) {
         this.vianda = vianda;
         this.tipoColab = tipoColab;
+
+        // agregarVianda(vianda); ??
     }
 
 

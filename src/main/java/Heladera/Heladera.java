@@ -39,11 +39,13 @@ public class Heladera {
     }
     
     public void agregarVianda(){
-        // TODO
+        // TODO - Duda de si está bien hecho
+        this.cantViandas++;
     }
 
     public void sacarVianda(){
-        // TODO
+        // TODO - Duda de si está bien hecho
+        this.cantViandas--;
     }
 
     public Boolean estaDentroDelRango(Double temperatura){
@@ -51,7 +53,7 @@ public class Heladera {
     }
 
     public void reportarTemperatura(Double temperatura){
-        // TODO
+        // TODO - No sabemos como completarlo
         this.temperaturaActual = temperatura;
         if( !estaDentroDelRango(temperatura) ){
             this.activa = false;
