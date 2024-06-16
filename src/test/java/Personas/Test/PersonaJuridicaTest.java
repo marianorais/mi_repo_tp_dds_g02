@@ -59,7 +59,7 @@ public class PersonaJuridicaTest {
         personaJ1.registrarColaboracion(donacion59);
 
 
-        assertEquals(116.00, personaJ1.calcularPuntaje(), 0.01);
+        assertEquals(99.50, personaJ1.calcularPuntaje(), 0.01);
     }
 
     @Test

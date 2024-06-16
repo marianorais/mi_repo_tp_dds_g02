@@ -8,6 +8,7 @@ import java.time.LocalDate;
 @Data
 public class Vianda {
 
+    // Los related problems son por los test que no usan el constructor
     public Vianda(String comida, LocalDate caducidad, LocalDate fechaDonacion, Heladera heladera, Double calorias, Double peso, Boolean estadoEntrega) {
         this.comida = comida;
         this.caducidad = caducidad;

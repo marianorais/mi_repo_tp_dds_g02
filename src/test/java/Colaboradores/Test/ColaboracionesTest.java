@@ -27,7 +27,7 @@ public class ColaboracionesTest {
     @Test
     public void elPuntajeDeHacerseCargoDeUnaHeladeraCon3HardCodeEs15() {
         HacerseCargoHeladera cargoHeladera = new HacerseCargoHeladera(h1,LocalDate.of(2024,1,1),tipoHeladeras);
-        assertEquals(3,cargoHeladera.calcularPuntaje(),0.01);
+        assertEquals(15,cargoHeladera.calcularPuntaje(),0.01);
     }
     @Test
     public void elPuntajeDeRepartir1TarjetaEs2() {
