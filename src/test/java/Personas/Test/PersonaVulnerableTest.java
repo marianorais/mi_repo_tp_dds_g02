@@ -21,7 +21,6 @@ import static org.mockito.Mockito.mock;
 
 public class PersonaVulnerableTest {
     //------------------------------------- TEST DE USO DE TARJETA -------------------------------------------------------------------
-
     // instancio a la persona en cada método para no tener que reestablecer los usos de su tarjeta.
     @Test
     public void tarjetaUsadaExitosamente() throws LimiteDiarioAlcanzadoException {

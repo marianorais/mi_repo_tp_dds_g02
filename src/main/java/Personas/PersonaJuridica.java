@@ -49,7 +49,6 @@ public class PersonaJuridica{
         }
     }
 
-
     public void agregarFormulario(Formulario formulario){
         this.formulariosRespondidos.add(formulario);
     }

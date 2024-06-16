@@ -1,7 +1,11 @@
 package Heladera;
 
+import Personas.PersonaFisica;
+import lombok.Data;
+
 import java.time.LocalDate;
 
+@Data
 public class Vianda {
 
     public Vianda(String comida, LocalDate caducidad, LocalDate fechaDonacion, Heladera heladera, Double calorias, Double peso, Boolean estadoEntrega) {
@@ -18,12 +22,9 @@ public class Vianda {
     private LocalDate caducidad;
     private LocalDate fechaDonacion;
     private Heladera heladera;
-    // private Colaborador colaborador -- // TODO - no existe la clase Colaborador ahora, ver que ponemos
+    private PersonaFisica colaborador;
     private Double calorias;
     private Double peso;
     private Boolean estadoEntrega;
 
-    public void entregar() {
-      // TODO - Método vacio - No se que implica entregar la vianda, no lo encuentro en la consigna, supongo que es algo de lo que se encarga distribuir vianda (tipo de colaboracion)
-    }
 }

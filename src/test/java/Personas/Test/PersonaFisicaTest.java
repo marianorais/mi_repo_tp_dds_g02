@@ -12,12 +12,14 @@ import Personas.Oferta;
 import Personas.PersonaFisica;
 import Tarjetas.TarjetaAlimentaria;
 import org.junit.Test;
+import Notificador.*;
 
 import java.time.LocalDate;
 
 import static Colaboradores.Frecuencia.MENSUAL;
 import static DatosDePersonas.Rubro.Gastronomia;
 import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.mock;
 
 public class PersonaFisicaTest {
     TipoColaboracion tipoDonarDinero = new TipoColaboracion(0.5);
@@ -25,7 +27,7 @@ public class PersonaFisicaTest {
     TipoColaboracion tipoDonarVianda = new TipoColaboracion(1.5);
     Heladera h1 = new Heladera(new Ubicacion(12.00,45.23),new Direccion(3000,new Calle("Medriano")),
             "Heladera Medrano",LocalDate.of(2000,10,9),Boolean.TRUE,15,
-            1.31, 40.62,15.87,Boolean.TRUE);
+            1.31, 40.62,15.87,Boolean.TRUE, mock(Notificador.class));
     Vianda viandaPrueba = new Vianda("Milanesas",LocalDate.of(2024,12,30),LocalDate.now(),
             h1,2300.00,1.00,Boolean.TRUE);
     Formulario formGenerico = new Formulario();

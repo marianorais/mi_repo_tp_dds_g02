@@ -2,6 +2,7 @@ package Heladera;
 
 import DatosDePersonas.Direccion;
 import DatosDePersonas.Ubicacion;
+import Notificador.*;
 
 import java.time.LocalDate;
 
@@ -16,6 +17,7 @@ public class Heladera {
     private Double temperaturaMaxima;
     private Double temperaturaActual;
     private Boolean sensorMovimientoActivado;
+    private Notificador notificador;
 
     public void setTemperaturaMinima(Double temperaturaMinima) {
         this.temperaturaMinima = temperaturaMinima;
@@ -25,7 +27,7 @@ public class Heladera {
         this.temperaturaMaxima = temperaturaMaxima;
     }
 
-    public Heladera(Ubicacion ubicacion, Direccion direccion, String nombre, LocalDate fechaPuestaEnFuncionamiento, Boolean activa, Integer cantViandas, Double temperaturaMinima, Double temperaturaMaxima, Double temperaturaActual, Boolean sensorMovimientoActivado) {
+    public Heladera(Ubicacion ubicacion, Direccion direccion, String nombre, LocalDate fechaPuestaEnFuncionamiento, Boolean activa, Integer cantViandas, Double temperaturaMinima, Double temperaturaMaxima, Double temperaturaActual, Boolean sensorMovimientoActivado, Notificador notificador) {
         this.ubicacion = ubicacion;
         this.direccion = direccion;
         this.nombre = nombre;
@@ -36,15 +38,14 @@ public class Heladera {
         this.temperaturaMaxima = temperaturaMaxima;
         this.temperaturaActual = temperaturaActual;
         this.sensorMovimientoActivado = sensorMovimientoActivado;
+        this.notificador = notificador;
     }
     
     public void agregarVianda(){
-        // TODO - Duda de si está bien hecho
         this.cantViandas++;
     }
 
     public void sacarVianda(){
-        // TODO - Duda de si está bien hecho
         this.cantViandas--;
     }
 
@@ -53,11 +54,10 @@ public class Heladera {
     }
 
     public void reportarTemperatura(Double temperatura){
-        // TODO - No sabemos como completarlo
         this.temperaturaActual = temperatura;
         if( !estaDentroDelRango(temperatura) ){
             this.activa = false;
-            // enviarAlerta() -> Como hace el sensor para enviar la temperatura? Como y a quien le enviamos la alerta?
+            notificador.enviarAlerta();
         }
     }
 }

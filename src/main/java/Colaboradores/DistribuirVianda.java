@@ -10,7 +10,7 @@ public class DistribuirVianda implements Colaboracion{
     private String motivo;
     private TipoColaboracion tipoColab;
 
-    // TODO - Arreglar esto, tiene dos constructores
+    // TODO - Dejamos los dos, para no perjudidar el validador de contraseñas, después lo corregimos.
     public DistribuirVianda(int cantidadViandas, Heladera heladeraOrigen, Heladera heladeraDestino, String motivo, TipoColaboracion tipoColab) {
         this.cantidadViandas = cantidadViandas;
         this.heladeraOrigen = heladeraOrigen;

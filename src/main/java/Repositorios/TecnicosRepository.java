@@ -34,7 +34,7 @@ import Excepciones.*;
         return tecnicos.stream()
                 .filter(tecnico -> tecnico.getNumDocumento().equals(numeroDocumento))
                 .findAny()
-                .orElseThrow(() -> new TecnicoNoEncontradoException("Técnico buscado no encontrad."));
+                .orElseThrow(() -> new TecnicoNoEncontradoException("Técnico buscado no encontrado."));
     }
 
     @Override

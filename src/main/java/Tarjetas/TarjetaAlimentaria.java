@@ -22,6 +22,7 @@ public class TarjetaAlimentaria {
         this.usos = new ArrayList<>();
     }
 
+    // TODO - Dejamos este constructor para no perjudicar al validador de contraseñas, después lo correjimos.
     public TarjetaAlimentaria() {
         this.usos = new ArrayList<>();
     }
@@ -41,20 +42,15 @@ public class TarjetaAlimentaria {
     }
 
     public boolean puedeUsarse() {
-        if(this.usos.isEmpty())
-            return true;
-
         this.restaurarLimite();
         return this.limiteUsosDiarios > 0;
     }
 
     public void registrarUso(Uso uso) throws LimiteDiarioAlcanzadoException {
-        this.restaurarLimite();
         if(this.puedeUsarse()){
             usos.add(uso);
             this.limiteUsosDiarios--;
-        } else {
+        } else
             throw new LimiteDiarioAlcanzadoException("No se puede agregar el uso, se ha alcanzado el límite diario.");
-        }
     }
 }

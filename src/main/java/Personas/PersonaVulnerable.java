@@ -4,9 +4,11 @@ import java.time.LocalDate;
 import DatosDePersonas.*;
 import Usuario.*;
 import Tarjetas.*;
+import lombok.Data;
 import lombok.Getter;
 import Excepciones.*;
 
+@Data
 public class PersonaVulnerable {
     private String nombre;
     private LocalDate fechaNacimiento;
@@ -15,11 +17,9 @@ public class PersonaVulnerable {
     private Direccion domicilio;
     private Documento tipoDocumento;
     private String numDocumento;
-    @Getter
     private Integer menoresACargo;
     private Usuario usuario;
     private PersonaFisica registrador;
-    @Getter
     private TarjetaAlimentaria tarjeta;
 
     public PersonaVulnerable(String nombre, LocalDate fechaNacimiento, LocalDate fechaRegistro,
