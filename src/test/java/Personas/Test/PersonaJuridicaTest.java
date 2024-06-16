@@ -25,7 +25,7 @@ public class PersonaJuridicaTest {
     Formulario formGenerico = new Formulario();
     Oferta of1= new Oferta("Burguer luchada",30.00, Gastronomia);
     @Test
-    public void losPuntosDeUnaPersonaVulnerableQueDono30YDistribuyo15Es30() {
+    public void losPuntosDeUnaPersonaJuridicaQueDono30YDistribuyo15Es30() {
         DonarDinero donacion30 = new DonarDinero(30, LocalDate.now(), MENSUAL, tipoDonarDinero);
         DistribuirVianda distribucion15 = new DistribuirVianda(15, tipoDistribuirVianda);
 
@@ -38,7 +38,7 @@ public class PersonaJuridicaTest {
     }
 
     @Test
-    public void losPuntosDeUnaPersonaVulnerableQueNoColaboroEs0() {
+    public void losPuntosDeUnaPersonaJuridicaQueNoColaboroEs0() {
 
         PersonaJuridica personaJ1 = new PersonaJuridica(formGenerico);
 
@@ -46,7 +46,7 @@ public class PersonaJuridicaTest {
     }
 
     @Test
-    public void losPuntosDeUnaPersonaVulnerableQueDono30y110y59() {
+    public void losPuntosDeUnaPersonaJuridicaQueDono30y110y59() {
         DonarDinero donacion30 = new DonarDinero(30, LocalDate.now(), MENSUAL, tipoDonarDinero);
         DonarDinero donacion110 = new DonarDinero(110, LocalDate.now(), MENSUAL, tipoDonarDinero);
         DonarDinero donacion59 = new DonarDinero(59, LocalDate.now(), MENSUAL, tipoDonarDinero);
@@ -61,6 +61,8 @@ public class PersonaJuridicaTest {
 
         assertEquals(116.00, personaJ1.calcularPuntaje(), 0.01);
     }
+
+    @Test
     public void unaPersonaCanjeaPuntosParaUnaOferta(){
         DonarDinero donacion30 = new DonarDinero(30, LocalDate.now(),MENSUAL,tipoDonarDinero);
         DonarDinero donacion110 = new DonarDinero(110, LocalDate.now(),MENSUAL,tipoDonarDinero);
@@ -77,6 +79,5 @@ public class PersonaJuridicaTest {
         personaF1.canjearPuntos(of1);
 
         assertEquals(69.50, personaF1.calcularPuntaje(),0.01);
-
     }
 }
