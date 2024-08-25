@@ -2,8 +2,11 @@ package Colaboradores;
 
 import Heladera.Heladera;
 
+import java.time.LocalDate;
+
 public class DistribuirVianda implements Colaboracion{
 
+    private LocalDate fecha;
     private int cantidadViandas;
     private Heladera heladeraOrigen;
     private Heladera heladeraDestino;

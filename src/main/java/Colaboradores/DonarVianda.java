@@ -9,6 +9,7 @@ public class DonarVianda implements Colaboracion{
 
     private Vianda vianda;
     private TipoColaboracion tipoColab;
+    private LocalDate fecha;
 
  
     public DonarVianda(Vianda vianda, TipoColaboracion tipoColab) {

@@ -5,6 +5,7 @@ import Excepciones.*;
 import lombok.Data;
 import lombok.Getter;
 
+import java.security.SecureRandom;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.ArrayList;
@@ -22,7 +23,6 @@ public class TarjetaAlimentaria {
         this.usos = new ArrayList<>();
     }
 
-    // TODO - Dejamos este constructor para no perjudicar al validador de contraseñas, después lo correjimos.
     public TarjetaAlimentaria() {
         this.usos = new ArrayList<>();
     }
@@ -52,5 +52,17 @@ public class TarjetaAlimentaria {
             this.limiteUsosDiarios--;
         } else
             throw new LimiteDiarioAlcanzadoException("No se puede agregar el uso, se ha alcanzado el límite diario.");
+    }
+
+    private String generarCodigo() {
+        String caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        int longitudCodigo = 11;
+        SecureRandom random = new SecureRandom();
+        StringBuilder codigoBuilder = new StringBuilder(longitudCodigo);
+        for (int i = 0; i < longitudCodigo; i++) {
+            int index = random.nextInt(caracteres.length());
+            codigoBuilder.append(caracteres.charAt(index));
+        }
+        return codigoBuilder.toString();
     }
 }
