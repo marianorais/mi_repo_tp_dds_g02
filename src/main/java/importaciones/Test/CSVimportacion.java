@@ -7,6 +7,8 @@ import Heladera.Heladera;
 import Heladera.Vianda;
 import Personas.PersonaFisica;
 import Personas.PersonaJuridica;
+import Repositorios.IPersonaFisicaRepository;
+import Repositorios.IPersonaJuridicaRepository;
 import Tarjetas.TarjetaAlimentaria;
 
 import java.io.BufferedReader;
@@ -21,12 +23,12 @@ import static org.mockito.Mockito.mock;
 import static Colaboradores.Frecuencia.MENSUAL;
 
 public class CSVimportacion {
-    private List<PersonaJuridica> personasJuridicas ;
-    private List<PersonaFisica> personasFisicas;
+    private final IPersonaJuridicaRepository personaJuridicaRepository;
+    private final IPersonaFisicaRepository personaFisicaRepository;
 
-    public CSVimportacion(){
-        personasJuridicas = new ArrayList<>();
-        personasFisicas = new ArrayList<>();
+    public CSVimportacion(IPersonaJuridicaRepository personaJuridicaRepository, IPersonaFisicaRepository personaFisicaRepository) {
+        this.personaJuridicaRepository = personaJuridicaRepository;
+        this.personaFisicaRepository = personaFisicaRepository;
     }
 
     public void importData(String filePath) {
@@ -57,7 +59,7 @@ public class CSVimportacion {
                         TipoColaboracion tipoDonarDinero = new TipoColaboracion(0.5);
                         Colaboracion colaboracion = new DonarDinero(Float.parseFloat(cantidad), LocalDate.now(), MENSUAL, tipoDonarDinero);
                         personaJuridica.registrarColaboracion(colaboracion);
-                        this.personasJuridicas.add(personaJuridica);
+                        this.personaJuridicaRepository.guardar(personaJuridica);
                         break;
                     case "DONACION_VIANDAS":
                         PersonaFisica personaFisica = new PersonaFisica(nuevoFormulario);
@@ -65,21 +67,21 @@ public class CSVimportacion {
                         Vianda vianda = mock(Vianda.class);
                         Colaboracion colaboracionViandas = new DonarVianda(vianda, tipoDonarVianda);
                         personaFisica.registrarColaboracion(colaboracionViandas);
-                        this.personasFisicas.add(personaFisica);
+                        this.personaFisicaRepository.guardar(personaFisica);
                         break;
                     case "REDISTRIBUCION_VIANDAS":
                         PersonaFisica personaFisica2 = new PersonaFisica(nuevoFormulario);
                         TipoColaboracion tipoDistribuirVianda = new TipoColaboracion(0.5);
                         Colaboracion colaboracionRedistribucionVianda = new DistribuirVianda(Integer.parseInt(cantidad), tipoDistribuirVianda);
                         personaFisica2.registrarColaboracion(colaboracionRedistribucionVianda);
-                        this.personasFisicas.add(personaFisica2);
+                        this.personaFisicaRepository.guardar(personaFisica2);
                         break;
                     case "ENTREGA_TARJETAS":
                         PersonaFisica personaFisica3 = new PersonaFisica(nuevoFormulario);
                         TipoColaboracion tipoRegistrarVulnerable = new TipoColaboracion(0.5);
                         Colaboracion colaboracionRegistroVulnerable = new RegistrarPersonaVulnerable(new TarjetaAlimentaria(), tipoRegistrarVulnerable);
                         personaFisica3.registrarColaboracion(colaboracionRegistroVulnerable);
-                        this.personasFisicas.add(personaFisica3);
+                        this.personaFisicaRepository.guardar(personaFisica3);
                         break;
                     default:
                         break;
@@ -88,13 +90,6 @@ public class CSVimportacion {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public List<PersonaJuridica> getPersonasJuridicas() {
-        return this.personasJuridicas;
-    }
-    public List<PersonaFisica> getPersonasFisicas() {
-        return this.personasFisicas;
     }
 
     private Formulario crearFormulario(String documento, String nroDoc, String nombre, String apellido, String email, String fecha) {
